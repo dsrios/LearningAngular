@@ -118,17 +118,21 @@ let wolverine:Xmen = {
 
 class Avenger {
     nombre: string = "Antman";
-    equipo:string;
-    nombreReal:string;
+    equipo:string = "undefined";
+    nombreReal:string = "undefined";
 
-    puedePelear:boolean;
-    peleasGanadas:number;
+    puedePelear:boolean = false;
+    peleasGanadas:number = 0;
 
-    constructor(){
-        
+    constructor(nombre:string, equipo:string, nombreReal:string){
+        this.nombre = nombre;
+        this.equipo = equipo;
+        this.nombreReal = nombreReal;
     }
 }
 
-let antman:Avenger = new Avenger();
+let antman:Avenger = new Avenger( "AntMan2", "cap", "Scott Lang");
 
 console.log(antman);
+
+
