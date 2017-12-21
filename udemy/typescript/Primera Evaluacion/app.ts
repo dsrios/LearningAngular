@@ -1,16 +1,21 @@
 
 // Uso de Let y Const
-var nombre = "Ricardo Tapia";
-var edad = 23;
+let nombre = "Ricardo Tapia";
+let edad = 23;
 
-var PERSONAJE = {
+let PERSONAJE = {
   nombre: nombre,
   edad: edad
 };
 
 
 // Cree una interfaz que sirva para validar el siguiente objeto
-var batman = {
+interface DC {
+  nombre: string,
+  artesMarciales: object
+}
+
+let  batman:DC = {
   nombre: "Bruno Díaz",
   artesMarciales: ["Karate","Aikido","Wing Chun","Jiu-Jitsu"]
 }
@@ -19,6 +24,9 @@ var batman = {
 function resultadoDoble( a, b ){
   return (a + b) * 2
 }
+
+let resultadoDobleFlecha = (a,b) => (a+b)*2;
+
 
 // Función con parametros obligatorios, opcionales y por defecto
 // donde NOMBRE = obligatorio
@@ -33,6 +41,15 @@ function getAvenger( nombre, poder, arma ){
   }
 };
 
+function getAvenger1 (NOMBRE:string, PODER?:string, ARMA:string = "arco"){
+  let mensaje;
+  if(PODER){
+    mensaje = nombre+" tiene el poder de: "+ PODER + " y un arama: "+ARMA;
+  }else{
+    mensaje = nombre + " tiene un " + PODER;
+  }
+};
+
 // Cree una clase que permita manejar la siguiente estructura
 // La clase se debe de llamar rectangulo,
 // debe de tener dos propiedades:
@@ -40,3 +57,13 @@ function getAvenger( nombre, poder, arma ){
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
+
+class rectangulo {
+  base:number;
+  altura:number;
+  
+  constructor(){
+  }
+
+  calArea = (base, altura) => this.base * this.altura;
+}
