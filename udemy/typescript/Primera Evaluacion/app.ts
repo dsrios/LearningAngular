@@ -1,18 +1,19 @@
 
 // Uso de Let y Const
-let nombre = "Ricardo Tapia";
-let edad = 23;
+let nombre:string = "Ricardo Tapia";
+let edad:number = 23;
 
-let PERSONAJE = {
+const PERSONAJE:{nombre:string, edad:number} = {
   nombre: nombre,
   edad: edad
 };
 
+const constante = "Este valor no cambia";
 
 // Cree una interfaz que sirva para validar el siguiente objeto
 interface DC {
   nombre: string,
-  artesMarciales: object
+  artesMarciales: string[];//Arreglo de strings
 }
 
 let  batman:DC = {
@@ -25,7 +26,7 @@ function resultadoDoble( a, b ){
   return (a + b) * 2
 }
 
-let resultadoDobleFlecha = (a,b) => (a+b)*2;
+let resultadoDobleFlecha = (a:number,b:number) => (a+b)*2;
 
 
 // Función con parametros obligatorios, opcionales y por defecto
@@ -42,11 +43,15 @@ function getAvenger( nombre, poder, arma ){
 };
 
 function getAvenger1 (NOMBRE:string, PODER?:string, ARMA:string = "arco"){
-  let mensaje;
+  let mensaje:string;
   if(PODER){
-    mensaje = nombre+" tiene el poder de: "+ PODER + " y un arama: "+ARMA;
+    mensaje = NOMBRE+" tiene el poder de: "+ PODER + " y un arma: "+ARMA;
+    //template literal 
+    mensaje = `${NOMBRE} tiene el poder de : ${PODER} y un arma: ${ARMA} `; 
   }else{
-    mensaje = nombre + " tiene un " + PODER;
+    mensaje = NOMBRE + " tiene un " + PODER;
+    //template literal
+    mensaje = `${NOMBRE} tiene un ${PODER}`;
   }
 };
 
@@ -58,12 +63,14 @@ function getAvenger1 (NOMBRE:string, PODER?:string, ARMA:string = "arco"){
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
 
-class rectangulo {
+class Rectangulo {
   base:number;
   altura:number;
   
   constructor(){
   }
 
-  calArea = (base, altura) => this.base * this.altura;
+  calcularArea():number {
+    return this.base * this.altura;
+  }
 }
