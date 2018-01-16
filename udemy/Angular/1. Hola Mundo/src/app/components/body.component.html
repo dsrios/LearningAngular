@@ -2,14 +2,23 @@
     <div class="col-md-6">
         <h1>*ngIf</h1>
         <hr>
-        <div class="card text-white bg-primary mb-3">
+
+        <button type="button" class="btn btn-outline-primary btn-block" (click)=" mostrar = !mostrar">Mostrar/Ocultar</button>
+
+        <br>
+
+        <div *ngIf="mostrar" class="card text-white bg-primary mb-3">
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">{{frase.mensaje}}</p>
+                <footer>{{frase.autor}}</footer>
             </div>
         </div>
     </div>
     <div class="col-md-6">
         <h1>*ngFor</h1>
         <hr>
+        <ul class="list-group">
+            <li *ngFor="let personaje of personajes; let i = index" class="list-group-item">{{i + 1}}. {{personaje}}</li>                
+        </ul>
     </div>
 </div>
