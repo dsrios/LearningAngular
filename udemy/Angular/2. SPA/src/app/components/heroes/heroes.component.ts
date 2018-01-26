@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from '../../servicios/heroes.service';
+import { Router } from '@angular/router';// Se usa para redireccionar a otra pagina
+
 // Heroe es una interface
 
 
@@ -12,15 +14,17 @@ export class HeroesComponent implements OnInit {
 
   heroes: Heroe [] = [];
 
-  constructor(private _serviceHeroes: HeroesService) {
+  constructor(private _serviceHeroes: HeroesService, private router: Router) {
     console.log('Constructor');
    }
 
   ngOnInit() {
-
     this.heroes = this._serviceHeroes.getHeroes();
     console.log(this.heroes);
+  }
 
+  verHeroes( idx: number ) {// Navegando con un boton hacia otra pagina
+    this.router.navigate(['/hero', idx]);
   }
 
 }
