@@ -12,7 +12,7 @@ export class HeroComponent implements OnInit {
 
   hero: any = {};
 
-  constructor( private activatedRoute: ActivatedRoute ) {
+  constructor( private activatedRoute: ActivatedRoute, private _heroService: HeroesService ) {
 
     this.activatedRoute.params.subscribe( params => {
        console.log( params['id'] );
