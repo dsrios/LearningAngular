@@ -69,8 +69,12 @@ export class HeroesService {
      }
 
 
-     getHeroes() {
+     getHeroes() { // Retorna todos lo heroes
          return this.heroes;
+     }
+
+     getHero( idx: string) { // Retorna un solo heroe
+       return this.heroes[idx];
      }
 }
 
