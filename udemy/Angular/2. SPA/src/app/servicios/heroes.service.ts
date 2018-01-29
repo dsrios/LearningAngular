@@ -76,6 +76,25 @@ export class HeroesService {
      getHero( idx: string) { // Retorna un solo heroe con el id idx
        return this.heroes[idx];
      }
+
+     buscarHeroes (termino: string ): Heroe[] {// Busca un hereo dentro del arreglo
+
+        let heroesArr: Heroe[] = [];
+        termino = termino.toLocaleLowerCase();
+
+        for ( let heroe of this.heroes){
+
+          let nombre = heroe.nombre.toLocaleLowerCase();
+
+          if (nombre.indexOf( termino ) >= 0 ) {
+            heroesArr.push( heroe );
+          }
+
+        }
+
+        return heroesArr;
+
+     }
 }
 
 export interface Heroe {
