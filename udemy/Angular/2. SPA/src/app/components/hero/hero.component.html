@@ -1,3 +1,22 @@
-<p>
-  hero works!
-</p>
+<h1 class="animated fadeIn">{{this.hero.nombre}} <small>{{this.hero.aparicion}}</small></h1>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-4">
+
+    <img [src]="this.hero.img" [alt]="this.hero.nombre" class="img-fluid" >
+    <br><br>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Back Heroes ...</a>
+
+  </div>
+  <div class="col-md-8">
+    <h3>{{this.hero.nombre}}</h3>
+    <hr>
+    <p>
+      {{this.hero.bio}}
+    </p>
+    <div>
+      <img *ngIf="this.hero.casa === 'Marvel'" src="../../../assets/img/marvel_folder_icon.png" [alt]="this.hero.casa" class="img-crop"><!--  Cargar Imagen de DC or Marvel -->
+      <img *ngIf="this.hero.casa === 'DC'" src="../../../assets/img/DC_folder_icon.png" [alt]="this.hero.casa" class="img-crop">
+    </div>
+  </div>
+</div>

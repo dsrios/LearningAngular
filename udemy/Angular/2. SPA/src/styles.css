@@ -7,6 +7,12 @@ body{
   padding-bottom: 50px;
 }
 
+.img-crop {
+  width: 30%;
+  height: 30%;
+  overflow: hidden;
+}
+
 /* Animaciones */
 .animated {
     -webkit-animation-duration: 1s;
