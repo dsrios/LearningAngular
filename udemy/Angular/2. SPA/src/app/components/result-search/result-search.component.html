@@ -1,0 +1,23 @@
+<h1><small>Marvel y DC</small></h1>
+<hr>
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroesResult; let i = index">
+        
+        <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+        <div class="card-block">
+          <h4 class="card-title">{{ heroe.nombre }}</h4>
+          <p class="card-text">{{ heroe.bio }}</p>
+          <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+        
+            <!-- Redirección creada con un boton creando el archivo heroes.component.ts un Router -->
+            <button (click)="verHeroes(i)" type="button" class="btn btn-outline-primary btn-block">Button Hero</button>
+            <hr>
+            <!-- Redireccion creada con app.routes.ts y usando el routerLink -->
+            <a [routerLink]="[ '/hero', i]" class="btn btn-outline-primary btn-block">Link Hero</a>
+        </div>
+    </div>
+
+</div>
+
+
