@@ -1,8 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({name: 'name'})
-export class NamePipe implements PipeTransform {
-    transform(value: any): any {
-        
+@Pipe({name: 'capitalizado'})
+export class CapitalizadoPipe implements PipeTransform {
+    transform(value: string, args: any []): string {
+
+
+
+        return 'Hola mundo !';
     }
 }

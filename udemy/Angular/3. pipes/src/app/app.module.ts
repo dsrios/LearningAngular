@@ -9,13 +9,17 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localEs);
 
 
+// Importar el pipe personalizado
+import { CapitalizadoPipe } from './pipes/capitalizado.pipe';
+
 
 import { AppComponent } from './app.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CapitalizadoPipe
   ],
   imports: [
     BrowserModule
