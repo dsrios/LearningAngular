@@ -107,9 +107,9 @@
           <td> {{ nombre2 | capitalizado: false }}</td>
         </tr>
         <tr>
-          <td> {{ nombre2 }} </td>
+          <td> {{ inputContrasena }}</td>
           <td> <button (click)="activar = !activar" type="button" class="btn btn-outline-primary">Activar / Desactivar</button> </td>
-          <td> {{ nombre2 | contrasena: activar }}</td>
+          <td> {{ inputContrasena | contrasena: activar }}</td>
         </tr>
        
        

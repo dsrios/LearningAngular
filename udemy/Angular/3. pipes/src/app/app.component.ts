@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { setTimeout } from 'timers';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -37,5 +35,9 @@ export class AppComponent {
   video = 'Mtau4v6foHA';
 
   activar = true;
+  inputContrasena = 'Diego Rios';
+
+  // input = document.getElementById('inputContrasena');
+
 
 }
