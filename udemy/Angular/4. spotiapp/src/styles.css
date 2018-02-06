@@ -12,6 +12,10 @@ hr{
   background-color: #171717;
 }
 
+.top30 {
+  margin-top: 30px;
+}
+
 .puntero{
   cursor: pointer;
 }
