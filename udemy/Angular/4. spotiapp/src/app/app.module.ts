@@ -10,6 +10,17 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // Rutas
 import { app_routing } from './app.routes';
 
+// Services
+import { SpotifyService } from './services/spotify.service';
+
+
+// Modulo para hacer las peticiones GET - POST ...
+import { HttpClientModule } from '@angular/common/http';
+
+// Modulo para extraer la informacion de los formularios [(ngModel)]
+import { FormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -21,9 +32,11 @@ import { app_routing } from './app.routes';
   ],
   imports: [
     BrowserModule,
-    app_routing
+    app_routing,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ SpotifyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

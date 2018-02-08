@@ -9,7 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 const app_routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'search', component: SearchComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'home' }
+    { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
 
