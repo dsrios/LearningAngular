@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
               console.log('Informacion lista');
               console.log(resp);
           });
-   }
+    }
 
   ngOnInit() {
   }

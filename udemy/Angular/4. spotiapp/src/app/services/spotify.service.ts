@@ -19,7 +19,7 @@ export class SpotifyService {
 
     // Para el envio del token
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAaPpJ1064KTKLIhDmQNCKhMMag9RAB6CLyW8LxGe-gE_MgMrJut4A8PCmHylnehXOzQLs24juegbCtgfI'
+      'Authorization': 'Bearer BQDJpZKSBFE853QYwnMZkZkpcujbNDe5wufLBxf5Ba2q23i7j_d4haTZHABOe45JLwj_DRzy0V0_t3T4d0M'
     });
 
     // Retornar la peticion GET con el URL + header
@@ -30,7 +30,8 @@ export class SpotifyService {
               return this.artistas;
             });
   }
-}
+
+ }
 
 
   // Hacer peticion GET
