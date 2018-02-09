@@ -12,11 +12,14 @@
       <hr>    
 
       <div class="row">
-        <div *ngFor="let artista of _spotifyService.artistas" class="col-md-3 text-center puntero">
-          <img [src]=" artista.images | sinfoto " class="img-thumbnail">
-          <p>
-            {{artista.name}}
-          </p>
+
+        <div 
+          *ngFor="let artista of _spotifyService.artistas" 
+          class="col-md-3 text-center puntero"
+          [routerLink]="['/artist', artista.id]"
+        >
+          <img [src]=" artista.images | sinfoto " class="img-thumbnail" >
+          <p>{{ artista.name }}</p>
         </div>
         
       </div>

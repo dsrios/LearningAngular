@@ -16,10 +16,11 @@ export class SpotifyService {
 
   getArtistas( termino: String) {
     const url = `https://api.spotify.com/v1/search?query=${ termino }&type=artist&limit=20`;
+    const token = 'BQDFaLQ5g096IaH9JvBCJWnKpHMWoJgFOsM-b2SadKbh4F_yf85oVyaWVKWPanh8-NnbjJlV9FpoIIAOdbo';
 
     // Para el envio del token
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDJpZKSBFE853QYwnMZkZkpcujbNDe5wufLBxf5Ba2q23i7j_d4haTZHABOe45JLwj_DRzy0V0_t3T4d0M'
+      'Authorization': `Bearer ${ token }`
     });
 
     // Retornar la peticion GET con el URL + header
