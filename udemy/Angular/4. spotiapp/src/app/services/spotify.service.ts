@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; // Permite usar las peticiones GET - POST ...
 import 'rxjs/add/operator/map'; // Se hace esta importacion para usar el operardor map
+import { forEach } from '@angular/router/src/utils/collection';
 
 
 
@@ -14,7 +15,7 @@ export class SpotifyService {
   urlSpotify: String = 'https://api.spotify.com/v1/';
 
   // Token de conexion (Renovar cada hora)
-  token: String = 'BQB2QAItER4W2w5N8qFAVEX5IBRBbKl05XOnVDm6UZArszTj9ApjG_KTq_FTSh0wmSx9j8MHoQSwRLAj0ok';
+  token: String = 'BQBVcIsjpPqqorM98dGwd1xwYOsxKp4M0VbV3k5_MLwAjNN9odwbdo19Tgzy1HnDdTALRqFS1YvOijHc03o';
 
 
 
@@ -50,6 +51,14 @@ export class SpotifyService {
     return this.http.get( url_artist, {headers});
   }
 
+  getTopTracks ( id_artista: String): any {
+    const country = 'US'; // Select country to get top ES or US ...
+    const url_top_track = `${this.urlSpotify}artists/${id_artista}/top-tracks?country=${country}`;
+    const headers = this.getHeaders();
+    return this.http.get( url_top_track, {headers})
+            .map( result => result.tracks );
+  }
+
  }
 
 
@@ -59,3 +68,5 @@ export class SpotifyService {
     //       console.log( data );
     //   }
     // );
+
+
