@@ -19,8 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Modulo para extraer la informacion de los formularios [(ngModel)]
 import { FormsModule } from '@angular/forms';
-import { SinfotoPipe } from './pipes/sinfoto.pipe';
 import { ArtistComponent } from './components/artist/artist.component';
+
+// Pipes
+import { SinfotoPipe } from './pipes/sinfoto.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 
 
@@ -32,6 +35,7 @@ import { ArtistComponent } from './components/artist/artist.component';
     SearchComponent,
     NavbarComponent,
     SinfotoPipe,
+    DomseguroPipe,
     ArtistComponent
   ],
   imports: [

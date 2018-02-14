@@ -46,10 +46,12 @@
             <td>{{ item.name }}</td>
             <td>{{ item.popularity }} %</td>
             <td>
-              <audio controls>
+              <!-- Se cambio el audio por el wiget de spotify -->
+              <!-- <audio controls>
                   <source [src]=" item.preview_url ?  item.preview_url : '' ">
                     Your browser does not support the audio element                
-              </audio>
+              </audio> -->
+              <iframe [src]="item.uri | domseguro: 'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             </td>
           </tr>         
         </tbody>
