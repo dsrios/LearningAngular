@@ -1,7 +1,7 @@
-<div class="container top30">
+<div class="container top30" style="align-self: center">
     <div class="row">
       <div class="col-md-4">
-          <img [src]="artista.images ? artista.images[0].url : '../assets/img/noimage.png'" class="img-circle" width="100%" height="100%">
+          <img [src]=" artista.images | sinfoto " class="img-circle" width="100%" height="100%">
       </div>
       <div class="col-md-8">
           <div class="row">
@@ -9,12 +9,13 @@
                   <h2>{{artista.name}}</h2>
                 </div>
           </div>
+          <hr>
           <div class="row top30">
             <div class="col-md-6">
-                <button type="button" class="btn btn-info btn-block" (click)="Regresar()">Regresar</button>
+                <button type="button" class="btn btn-outline-info btn-block" [routerLink] = "['/search']">Regresar</button>
             </div>
             <div class="col-md-6">
-                <button type="button" class="btn btn-success btn-block" (click)="Ir()">Ir</button>
+                <a class="btn btn-outline-success btn-block" [href]="artista.external_urls?.spotify" target="_blank">Ir</a>
             </div>
           </div>        
       </div>
@@ -24,14 +25,43 @@
 <br>
 <h3 style="margin-left: 1%">Top Tracks</h3>
 <br>
-<div class="container">
-  <div class="row top15" *ngFor="let item of topSong">
+<div class="container" style="align-self: center">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Popularidad</th>
+            <th scope="col">Escuchar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of topSong; let i = index" >
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <!-- <img [src]=" item.album ? item.album.images[2].url : '../assets/img/noimage.png'" class="img-thumbnail"> Esto es una forma seleccionando una de las fotos--> 
+              <img [src]=" item.album.images | sinfoto " class="img-thumbnail" width="50px">
+            </td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.popularity }} %</td>
+            <td>
+              <audio controls>
+                  <source [src]=" item.preview_url ?  item.preview_url : '' ">
+                    Your browser does not support the audio element                
+              </audio>
+            </td>
+          </tr>         
+        </tbody>
+      </table>
+     
+<!-- <div class="row top15" *ngFor="let item of topSong">
     <div class="col-md-2">
       <img [src]=" item.album ? item.album.images[2].url : '../assets/img/noimage.png'" class="img-thumbnail">
     </div>
     <div class="col-md-10" style="align-self: center">
         <h5>{{item.name}}</h5>        
     </div>
-  </div>
+  </div> -->
   <!-- <img [src]='item.album.images[2].url' alt=""> -->
 </div>

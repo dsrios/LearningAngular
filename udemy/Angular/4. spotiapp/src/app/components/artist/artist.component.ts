@@ -42,14 +42,14 @@ export class ArtistComponent implements OnInit {
             });
   }
 
-  Regresar() {
-    this.router.navigate(['search']);
-  }
+  // Regresar() {
+  //   this.router.navigate(['search']);
+  // } Esto se reemplaza con un routerLink
 
-  Ir() {
-    console.log(this.artista.external_urls.spotify);
-    window.open(this.artista.external_urls.spotify);
-    }
+  // Ir() {
+  //   console.log(this.artista.href);
+  //   window.open(this.artista.external_urls.spotify);
+  //  } Esto se reemplaza por una etiqueta a
 
 }
 
