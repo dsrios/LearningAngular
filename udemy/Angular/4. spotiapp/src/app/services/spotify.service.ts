@@ -15,7 +15,7 @@ export class SpotifyService {
   urlSpotify: String = 'https://api.spotify.com/v1/';
 
   // Token de conexion (Renovar cada hora)
-  token: String = 'BQBVcIsjpPqqorM98dGwd1xwYOsxKp4M0VbV3k5_MLwAjNN9odwbdo19Tgzy1HnDdTALRqFS1YvOijHc03o';
+  token: String = 'BQCeTTnI_mPYlsA1mJf95Jxk3b-zvglgsCfysicPMjYboZPch3wZciMHA35nqKm5l6-G6hFwsSJ7tvDi1Vo';
 
 
 
@@ -56,7 +56,7 @@ export class SpotifyService {
     const url_top_track = `${this.urlSpotify}artists/${id_artista}/top-tracks?country=${country}`;
     const headers = this.getHeaders();
     return this.http.get( url_top_track, {headers})
-            .map( result => result.tracks );
+            .map( (result: any) => result.tracks );
   }
 
  }

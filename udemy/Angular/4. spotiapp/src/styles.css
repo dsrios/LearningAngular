@@ -16,6 +16,10 @@ hr{
   margin-top: 30px;
 }
 
+.top15 {
+  margin-top: 15px;
+}
+
 .puntero{
   cursor: pointer;
 }
