@@ -15,7 +15,7 @@ export class SpotifyService {
   urlSpotify: String = 'https://api.spotify.com/v1/';
 
   // Token de conexion (Renovar cada hora)
-  token: String = 'BQCeTTnI_mPYlsA1mJf95Jxk3b-zvglgsCfysicPMjYboZPch3wZciMHA35nqKm5l6-G6hFwsSJ7tvDi1Vo';
+  token: String = 'BQDe7bcsf2Eexg8kJeiIdEjhyf5i5rw6zVYgrwiyuqcWrc0tzZEXjuLrZpEkClkziJLojmI0Bz0_gQEyd9M';
 
 
 

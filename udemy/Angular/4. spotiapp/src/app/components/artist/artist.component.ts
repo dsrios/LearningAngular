@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,9 @@ export class ArtistComponent implements OnInit {
   topSong: any [] = []; // Recibe el objeto del get top tracks
 
   constructor(private activatedRoute: ActivatedRoute,
-              public _spotifyService: SpotifyService) {}
+              public _spotifyService: SpotifyService,
+              private router: Router
+              ) {}
 
   ngOnInit() {
 // Capturar el parametro que viene por la url (id)
@@ -38,6 +41,15 @@ export class ArtistComponent implements OnInit {
 
             });
   }
+
+  Regresar() {
+    this.router.navigate(['search']);
+  }
+
+  Ir() {
+    console.log(this.artista.external_urls.spotify);
+    window.open(this.artista.external_urls.spotify);
+    }
 
 }
 
