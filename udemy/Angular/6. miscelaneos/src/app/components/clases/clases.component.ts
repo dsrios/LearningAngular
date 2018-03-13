@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { fontawesome, FontAwesomeConfig } from '@fortawesome/fontawesome';
+
 
 @Component({
   selector: 'app-clases',

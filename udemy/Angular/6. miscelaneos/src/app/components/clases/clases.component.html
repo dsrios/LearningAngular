@@ -22,13 +22,14 @@
 <br><br>
     <h3>Proceso Asíncrono</h3>
 
-    <button (click)="ejecutar()" type="button" class="btn btn-primary">
+    <button (click)="ejecutar()" type="button" class="btn btn-primary" [disabled]="cargar">
 
       <i class="fas" 
-         [ngClass]="{'fa-save': !cargar, 'fa-sync fa-spin fa-5x':cargar}"
+         [ngClass]="{'fa-save': !cargar, 'fa-sync fa-spin':cargar}"
       ></i>
       
-        Guardar Cambios
+        <span *ngIf="!cargar">Guardar Cambios</span>
+        <span *ngIf="cargar">Espere por favor ... </span>
     </button>
 
 <br><br><br><br>
