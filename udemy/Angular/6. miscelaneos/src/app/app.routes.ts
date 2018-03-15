@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
-import { CssComponent } from './components/css/css.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+
 
 
 
 const APP_ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'css', component: CssComponent },
+    { path: 'user', component: UsuarioComponent }
     // { path: 'path', component: FeatureComponent },
-    { path: '**', component: HomeComponent }
+    // { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
