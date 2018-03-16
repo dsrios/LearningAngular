@@ -6,10 +6,13 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 
 
 // Rutas hijas
-import { NuevoUsuarioComponent } from './components/usuario/nuevo-usuario.component';
-import { EditarUsuarioComponent } from './components/usuario/editar-usuario.component';
-import { DetalleUsuarioComponent } from './components/usuario/detalle-usuario.component';
+// import { NuevoUsuarioComponent } from './components/usuario/nuevo-usuario.component';
+// import { EditarUsuarioComponent } from './components/usuario/editar-usuario.component';
+// import { DetalleUsuarioComponent } from './components/usuario/detalle-usuario.component';
 
+// Se transaladaron para usuario.routes.ts
+
+import { USUARIOS_ROUTES } from './components/usuario/usuario.routes';
 
 
 // usuario/10/nuevo
@@ -18,14 +21,12 @@ const APP_ROUTES: Routes = [
     { // Ruta principal
         path: 'user/:id',
         component: UsuarioComponent,
-        // Ruta hija
+        /* Ruta hija
         children: [
-                    {path: 'nuevo', component: NuevoUsuarioComponent},
-                    {path: 'editar', component: EditarUsuarioComponent},
-                    {path: 'detalle', component: DetalleUsuarioComponent},
-                    { path: '**', pathMatch: 'full', redirectTo: 'nuevo' }
+                    // Cada una de las rutas hijas pero se reemplazo por el USUARIOS_ROUTES
 
-                  ]
+                  ]*/
+        children: USUARIOS_ROUTES // Nueva forma de importar rutas hijas
     },
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
