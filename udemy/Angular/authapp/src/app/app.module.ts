@@ -8,6 +8,9 @@ import { HomeComponent } from './component/home/home.component';
 import { PreciosComponent } from './component/precios/precios.component';
 import { ProtegidaComponent } from './component/protegida/protegida.component';
 
+// rutas
+import { APP_ROUTING } from './app.routes';
+
 
 @NgModule({
   declarations: [
