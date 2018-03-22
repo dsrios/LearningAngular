@@ -21,7 +21,8 @@ import { APP_ROUTING } from './app.routes';
     ProtegidaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
