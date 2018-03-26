@@ -11,6 +11,8 @@ import { ProtegidaComponent } from './component/protegida/protegida.component';
 // rutas
 import { APP_ROUTING } from './app.routes';
 
+// Servicios
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { APP_ROUTING } from './app.routes';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
