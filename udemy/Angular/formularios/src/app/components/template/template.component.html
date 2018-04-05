@@ -1,0 +1,88 @@
+<h4>Formularios <small>template</small></h4>
+<hr>
+<!-- 
+  <form ngNativeValidate> permite la validacion nativa por el navegador.
+    (ngSubmit)="function()" Permite enviar toda la informacion.
+    ngValid = esta propiedad cambia cuando se cumplen las validaciones  
+
+
+-->
+  <form (ngSubmit)="guardar(forma)" #forma="ngForm">
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+
+        <input class="form-control" [ngClass]="{ 'is-invalid': nombre.errors?.required || nombre.errors?.minlength }"
+               type="text"
+               placeholder="Nombre"
+               name="nombre"
+               [ngModel]="usuario.nombre"
+               minlength="3"
+               required
+               #nombre="ngModel">
+        <div class="invalid-feedback" *ngIf="nombre.errors?.required">
+          Este campo es requerido.
+        </div>
+        <div class="invalid-feedback" *ngIf="nombre.errors?.minlength">
+          Debe ingresar minimo {{ nombre.errors.minlength.requiredLength }} letras y solo ingreso {{ nombre.errors.minlength.actualLength }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+
+        <input class="form-control" [ngClass]="{ 'is-invalid': apellido.errors?.required }"
+               type="text"
+               placeholder="Apellido"
+               name="apellido"
+               [ngModel]="usuario.apellido"
+               required
+               #apellido="ngModel">
+        <div class="invalid-feedback" *ngIf="apellido.errors?.required">
+          Este campo es requerido
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-md-8">
+
+      <input class="form-control" [ngClass]="{ 'is-invalid': email.errors?.required || email.errors?.pattern }"
+             type="email"
+             placeholder="Correo electrónico"
+             name="email"
+             [ngModel]="usuario.email"
+             required
+             pattern="[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}$"
+             #email="ngModel">
+      <div class="invalid-feedback" *ngIf="email.errors?.required">
+        Este campo es requerido
+      </div>
+      <div class="invalid-feedback" *ngIf="email.errors?.pattern">
+        Este campo debe tener el formato MyDominio@dominio.com 
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button 
+              type="submit" 
+              class="btn btn-outline-primary" 
+              [disabled]="!forma.valid">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>
