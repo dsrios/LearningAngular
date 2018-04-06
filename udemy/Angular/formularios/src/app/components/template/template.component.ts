@@ -19,10 +19,25 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateComponent implements OnInit {
 
+  paises: any = [
+                  {
+                    codigo: 'CRI',
+                    name: 'Costa Rica'
+                  },
+                  {
+                    codigo: 'ESP',
+                    name: 'España'
+                  }
+              ];
+  sexos: string[] = ['Masculino', 'Femenino'];
+
   usuario: Object = {
     nombre: null,
     apellido: null,
-    email: null
+    email: null,
+    pais: '',
+    sexo: '',
+    acepta: false
   };
 
   constructor() { }
@@ -35,13 +50,6 @@ export class TemplateComponent implements OnInit {
     console.log('NgForm: ', forma);
     console.log('Valores: ', forma.value);
     console.log('Usuario: ', this.usuario);
-  }
-
-  // tslint:disable-next-line:member-ordering
-  myNumbers: any = [1, 2, 3, 4, 5];
-
-  searchInArray( num ) {
-
   }
 
 }
