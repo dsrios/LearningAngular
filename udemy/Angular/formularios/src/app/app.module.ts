@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Modulo para usar formularios
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// ReactiveFormsModule: Es necesario para la creacion de formularios a traves de la aproximacion por data.
 import { HttpModule } from '@angular/http';
 
 // Componentes
@@ -21,7 +22,8 @@ import { DataComponent } from './components/data/data.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
