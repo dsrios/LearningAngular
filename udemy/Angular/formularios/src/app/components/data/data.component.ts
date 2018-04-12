@@ -8,9 +8,43 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'; // Necesari
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  // Elemento responsable de la forma
+
+  forma: FormGroup;
+
+  usuario: Object = {
+
+    nombrecompleto: {
+      nombre: 'Diego',
+      apellido: 'Perez'
+    },
+    correo: 'diego@yopmail.com'
+  };
+
+  constructor() {
+
+    console.log(this.usuario);
+
+    this.forma = new FormGroup({
+
+      'nombrecompleto': new FormGroup({
+          'nombre': new FormControl( '', [Validators.required, Validators.minLength(3)] ),
+          'apellido': new FormControl( '', Validators.required )
+        }),
+
+      // nameInput: new FormControl (valueDefautl, [validationRules], validationRulesAsync)
+      // Se incluyeron en el nombrecompleto dentro del FormGroup
+      // 'nombre': new FormControl( '', [Validators.required, Validators.minLength(3)] ),
+      // 'apellido': new FormControl( '', Validators.required ),
+      'correo': new FormControl( '', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}$')] )
+    });
+
+  }
 
   ngOnInit() {
   }
 
+  GuardarCambios() {
+    console.log( this.forma.value );
+  }
 }
