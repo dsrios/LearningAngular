@@ -39,6 +39,9 @@ export class DataComponent implements OnInit {
       'correo': new FormControl( '', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,3}$')] )
     });
 
+    // Agregar los valores a los campos. (la forma debe tener la misma forma que el objeto)
+    this.forma.setValue ( this.usuario );
+
   }
 
   ngOnInit() {
@@ -46,5 +49,6 @@ export class DataComponent implements OnInit {
 
   GuardarCambios() {
     console.log( this.forma.value );
+    console.log( this.forma );
   }
 }
