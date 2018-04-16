@@ -46,6 +46,26 @@
     </div>
   </div>
 
+  <!-- Pasa Tiempos -->
+  <!-- El formArrayName : Permite repetir los elementos que esten dentro de un control de tipo array -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Pasa Tiempos</label>
+    <div class="col-md-8" formArrayName="pasatiempos">
+
+      <input  *ngFor="let item of forma.controls['pasatiempos'].controls; let i = index"
+              [formControlName]="i"
+              type="text"
+              class="form-control">
+      
+    </div>
+  </div>
+
+  <!-- Agregar un nuevo pasatiempoagregarPasatiempo -->
+  <button (click)="agregarPasatiempo()"
+          class="btn btn-primary" 
+          type="button">
+          Nuevo
+  </button>
 
 
   <div class="form-group row">
