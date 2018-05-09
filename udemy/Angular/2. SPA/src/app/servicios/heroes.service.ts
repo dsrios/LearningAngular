@@ -85,7 +85,7 @@ export class HeroesService {
 
         for ( let heroe of this.heroes){ // Recorre el arreglo de heroes
 
-          let nombre = heroe.nombre.toLocaleLowerCase(); // pone el nombre de lo heroes en lowercase
+          const nombre = heroe.nombre.toLocaleLowerCase(); // pone el nombre de lo heroes en lowercase
 
           if (nombre.indexOf( termino ) >= 0 ) { // Busca si hay cocidencia entre el heroe buscado y el listado de heroes
             heroesArr.push( heroe ); // Envia los resultados a un nuevo arreglo para luego retornarlo
