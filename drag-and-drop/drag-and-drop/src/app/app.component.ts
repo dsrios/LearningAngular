@@ -9,12 +9,24 @@ export class AppComponent {
 
   title = 'app';
 
+ // transferData: Object = {id: 1, msg: 'Hello'};
+ transferData: Object = [
+   {id: 1, msg: 'Modulo 1', positions: [1, 2]},
+   {id: 2, msg: 'Modulo 2', positions: [1]},
+   {id: 3, msg: 'Modulo 3', positions: [1, 2]},
+   {id: 4, msg: 'Modulo 4', positions: [1, 2]},
+   {id: 5, msg: 'Modulo 5', positions: [1, 2]}
+ ];
 
-  transferData: Object = {id: 1, msg: 'Hello'};
-  receivedData: Array<any> = [];
+ receivedData: Array<any> = [];
+
+
 
   transferDataSuccess($event: any) {
-      this.receivedData.push($event);
-  }
-}
+    console.log( $event );
 
+    this.receivedData.push($event);
+  }
+
+
+}

@@ -1,0 +1,23 @@
+.modules {
+    background-color: #F8971D;
+    /* border: 1px solid salmon; */
+    width: 30%;
+    position: static;
+
+}
+
+.structure {
+    position: static;
+    width:80%;
+    height:50%;
+    background-color:#eee;
+}
+
+.container {
+    position: static;
+}
+
+.card-content {
+    margin: 0 auto;
+}
+
