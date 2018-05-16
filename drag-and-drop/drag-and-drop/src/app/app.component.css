@@ -13,11 +13,10 @@
     background-color:#eee;
 }
 
-.container {
-    position: static;
-}
-
 .card-content {
     margin: 0 auto;
 }
 
+.row {
+    padding: 2%;
+}

@@ -53,20 +53,29 @@
         <div class=".col-6 .col-md-4 modules">
             <div class="container">
                 <div class="row">  
-                    <div class="card" *ngFor="let module of transferData" dnd-draggable [dragEnabled]="true" [dragData]="module">
-                        <h6 class="card-header" style="background-color: #717073">Modules</h6>
-                       
-                        <div class="container" *ngFor="let item of module.positions">
-                                <div class="row">
-                                        <svg width="24%" height="100">
-                                                <!-- Creacion de positions -->
-                                                <rect x="5" y="5" width="45%" height="100%" stroke="black" fill="solid" stroke-width="5"/>
-                                        </svg>
-                                </div>
-                        </div>                        
+                    <div class="container" >
+                            <div class="row" *ngFor="let module of transferData" dnd-draggable [dragEnabled]="true" [dragData]="module">
+                                <svg [attr.width]="positions( module.positions.length )" [attr.height]="heightSvg">
+                                    <defs>
+                                        <pattern id="smallGrid" [attr.width]="smallGrid" [attr.height]="smallGrid" patternUnits="userSpaceOnUse">
+                                            <path d="M 100 0 L 0 0 0 100" fill="lightblue" stroke="#7B7BFF" stroke-width="1"/>
+                                        </pattern>    
+                                        
+                                        <pattern id="grid" [attr.width]="gridW" [attr.height]="gridH" patternUnits="userSpaceOnUse">
+                                            <rect width="100%" height="100%" fill="url(#smallGrid)"/>
+                                            <path d="M 1000 0 L 0 0 0 1000" fill="none" stroke="#00004D" stroke-width="2"/>
+                                        </pattern>
+                                    </defs>
+                                    
+                                    <rect width="100%" height="100%" fill="url(#grid)" />
+                                    
+                                </svg>
+                            </div>
+                        
                     </div>
                 </div>   
             </div>          
         </div>
     </div>
 </div>
+
