@@ -1,0 +1,2 @@
+-- Learning about grid on CSS http://cssgridgarden.com/
+-- Trivia App proyect online https://stackblitz.com/github/leono286/angular-trivia?file=src%2Fapp%2Fapp.component.scss
