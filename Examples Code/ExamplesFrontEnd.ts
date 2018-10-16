@@ -259,5 +259,13 @@ const promiseArray = [];
         }
     }
 
-// Info about 
+// Gradient Text
+    .span {
+        // background: linear-gradient(60deg, #98288f, #d88ee0, #8785f2, #00fff7) !important;
+        font-size: 25px;
+        background: -webkit-linear-gradient(#98288f, #d88ee0, #8785f2, #00fff7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: $fontFamilyPrimary !important;
+    }
  
