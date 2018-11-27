@@ -269,3 +269,167 @@ const promiseArray = [];
         font-family: $fontFamilyPrimary !important;
     }
  
+
+// EVETNS PAGE
+<section class="events">
+  <!-- intro banner with img -->
+  <!-- material tabs -->
+  <!-- workshop component -->
+  <!-- meet up component -->
+  <!-- labs component -->
+  <!-- code jams component -->
+  <div class="banner">
+
+  </div>
+  <div class="content-tabs">
+      <mat-tab-group dynamicHeight>
+          <mat-tab>
+            <ng-template mat-tab-label>
+                <span>WORKSHOPS</span>
+            </ng-template>
+            
+            <div class="content-tabs-workshop content" >
+              Work Shop content
+            </div>
+          </mat-tab>
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <span>MEET UP</span>
+              </ng-template>
+            <div class="content-tabs-meetup content" >
+              Meet up content
+            </div>
+          </mat-tab>
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <span>LABS</span>
+              </ng-template>
+            <div class="content-tabs-labs content" >
+              Labs content
+            </div>
+          </mat-tab>
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <span>CODE JAMS</span>
+              </ng-template>
+            <div class="content-tabs-codejams content" >
+              Code Jams content
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+  </div>
+
+</section>
+<app-get-in-touch
+  [class.active]="showOverlay"
+  (toggleGetInTouchOverlay)="closeOverlay()">
+</app-get-in-touch>
+
+// CSS EVENTS PAGE
+@import '~styles/variables';
+.events {
+
+    
+   
+}
+
+.banner {
+    background-color: $ciberGrape;
+    // background : linear-gradient(60deg, $fandango, $brightLilac, $mediumSlateBlue, $turquoiseBlue);
+
+    width: 100%;
+    // height: 100vh;
+    height: 90vh;
+    display: block;
+}
+
+.content-tabs {
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // margin: 16px;
+        // padding: 16px;
+        border-radius: 8px;
+       
+        
+
+        width: 100%;
+        height: 100vh;
+    }
+
+    ::ng-deep .mat-tab-label {
+        span {
+            // background: linear-gradient(60deg, #98288f, #d88ee0, #8785f2, #00fff7) !important;
+            font-size: 25px;
+            background: -webkit-linear-gradient(#98288f, #d88ee0, #8785f2, #00fff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $fontFamilyPrimary !important;
+        }
+    }
+    
+
+    &-workshop {
+        height: 50vh !important; 
+    }
+    &-meetup {
+
+    }
+    &-labs {
+
+    }
+    &-codejams {
+
+    }
+}
+
+::ng-deep .mat-tab-header {
+    background-color: $ciberGrape;
+}
+
+::ng-deep .mat-body-wrapper{
+    width: 100%
+}
+
+@media (min-width: 1024px) {
+    ::ng-deep .mat-tab-body-wrapper {
+        width: 95%;
+    }
+}
+
+// Border Gradient
+https://cssgurubd.wordpress.com/2017/04/16/how-to-style-gradient-border-color/
+
+// Border Gradient
+.rounded-corners-gradient-borders {
+    width: 300px;
+    height: 80px;
+    border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #f00,#3020ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  &-info {
+        
+    width: 80%;
+    height: 80vh;
+    background: #ADF;
+    // background: #FFF;
+    
+
+    -webkit-box-shadow: 0 3px 12px 2px #b0b0b0;
+    -moz-box-shadow: 0 3px 12px 2px #b0b0b0;
+    box-shadow: 0 3px 12px 2px #b0b0b0;
+
+
+    border-bottom: 5px solid transparent;
+    border-radius: 13px;
+    background-image: linear-gradient(white, white), linear-gradient(60deg, $fandango, $brightLilac, $mediumSlateBlue, $turquoiseBlue);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border-image: linear-gradient(60deg, $fandango, $brightLilac, $mediumSlateBlue, $turquoiseBlue);
+    border-image-slice: 1;
+}
