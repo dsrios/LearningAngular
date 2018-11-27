@@ -1,0 +1,125 @@
+-- Diapositivas
+
+-- Primer Base
+https://www.typescriptlang.org/play/
+-- HandBook
+https://www.typescriptlang.org/docs/handbook/enums.html
+
+-- Angular online
+stacblis
+
+
+-- Familiarizacion con TS
+class Animal { 
+    protected age: number;
+    protected breed: string;
+
+    constructor(age: number, breed: string) { 
+        this.age = age;
+        this.breed = breed;
+    }
+
+}
+
+class Dog extends Animal implements Mammal {
+    // private age: number;
+    private name: string;
+    // private breed: string;
+
+    constructor(name: string, age: number, breed: string) {
+        super(age, breed);
+        this.name = name;
+
+        enum Move { 
+            LEFT = 0,
+            RIGHT = 1,
+        }
+    }
+
+    
+
+    public getAge(): number {
+        return this.age;
+    }
+    public getName(): string {
+        return this.name;
+    }
+    public getBreed(): string {
+        return this.breed;
+    }
+
+    public setAge(valueAge: number) {
+        this.age = valueAge;
+    }
+    public setName(valueName: string) {
+        this.name = valueName;
+    }
+    public setBreed(valueBreed: string) {
+        this.breed = valueBreed;
+    }
+
+    public bark(value: String): string {
+        console.log(value);
+        return 'The dog say: woof!'
+    }
+
+    public move(action: number) {
+        switch (action) { 
+            case 0: 'go to LEFT';
+                break;
+            case 1: 'go to RIGHT';
+                break;
+            default: "Does not move!";
+        }
+         
+
+    }
+
+
+}
+
+class Cat extends Animal implements Mammal{
+    // private age: number;
+    private name: string;
+    // private breed: string;
+
+    constructor(name: string, age: number, breed: string) {        
+        super(age, breed);        
+        this.name = name;
+    }
+
+    public getAge(): number { 
+        return this.age;
+    }
+    public getName(): string { 
+        return this.name;
+    }
+    public getBreed(): string { 
+        return this.breed;
+    }
+
+    public setAge( valueAge: number) { 
+        this.age = valueAge;
+    }
+    public setName( valueName: string ) { 
+        this.name = valueName;
+    }
+    public setBreed( valueBreed: string ) { 
+        this.breed = valueBreed;
+    }
+
+    public meow (value: String) : string { 
+        console.log(value);
+        return 'The cat say: meow!';
+    }
+
+
+}
+
+interface Mammal { 
+    hair?: string;
+}
+
+function growJair() { 
+
+}
