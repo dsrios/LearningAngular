@@ -1,0 +1,26 @@
+
+
+https://www.htmlcinco.com/test-cuanto-sabes-de-angular-2-nivel-principiante/comment-page-1/
+https://cibertest.com/examen-online/1122/typescript
+
+Una directiva posee su propio template
+
+¿TypeScript es un superconjunto de javascript?
+
+Cómo modifico la detección de cambios de un componente para que se por la acción del clic?
+
+changeDetection: ChangeDetectionStrategy.OnPushButton
+
+changeDetection: ChangeDetectionStrategy.OnClick
+
+changeDetection: ChangeDetectionStrategy.OnPush
+
+changeDetection: ChangeDetectionStrategy.Default
+
+¿Cómo se debe deshabilitar un control de un formulario reactivo en Angular?
+
+¿Qué sucede cuando agregamos la propiedad “preserveWhitespaces:  false” al decorador de un componente en un proyecto de Angular 2?
+
+¿Qué sucede cuando declaro una propiedad con el tipo de dato “never” y le asigno como valor “12345” en un componente?
+
+http://ocw.uc3m.es/ingenieria-telematica/software-de-comunicaciones-1/examen/swc_examen_test
